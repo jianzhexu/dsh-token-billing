@@ -10,7 +10,7 @@
     "./client": "./lib/client.js",
     "./package.json": "./package.json"
   },
-  "files": ["lib", "cordis.patch.yml"],
+  "files": ["lib", "cordis.patch.yml", "README.zh.md"],
   "dependencies": {
     "zod": "^4.4.3"
   },
