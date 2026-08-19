@@ -1,0 +1,36 @@
+# dsh-token-billing
+
+DeepSeek Harness 的 token 计费插件：按 DeepSeek 官方定价对每次模型调用记账，在 Web UI 右下角显示悬浮计费卡片。
+
+## 功能
+
+- 当前会话 / 所属工作区 / 全部会话三层费用汇总（调用次数、输入/缓存命中/输出 tokens、费用）
+- 高峰/空闲时段分别计价（北京时间 9:00-12:00、14:00-18:00 为高峰，其余为空闲，空闲价格为高峰的一半）
+- 账本持久化在 storage-domain 领域 `token_billing`，进程重启后保留
+- 悬浮卡片悬停显示明细：分模型统计、工作区列表、单价表
+
+## 安装
+
+要求使用 web 组合的 profile（如 `dsh --profile web`；插件依赖 `webServer`、`storageDomain` 服务与浏览器插件表，均由 `dsh-web-app` 组合包提供）：
+
+```sh
+dsh plugin --profile <name> add github:<你的GitHub用户名>/dsh-token-billing
+```
+
+安装即激活：插件行随包自带的组合层挂载，无需手动编辑配置。本插件为纯 JavaScript、无构建步骤，git 安装不需要 pnpm 构建授权（`allowBuilds`）。
+
+## 卸载与覆盖
+
+```sh
+dsh plugin --profile <name> remove dsh-token-billing
+```
+
+覆盖配置或禁用：在 profile 自己的 `cordis.patch.yml` 中按行 id `token-billing` 操作。
+
+## 定价来源
+
+<https://api-docs.deepseek.com/zh-cn/quick_start/pricing>（价格表内置于插件，随版本更新；不在定价页上的模型不计价）
+
+## License
+
+MIT

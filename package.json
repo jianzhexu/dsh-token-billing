@@ -1,0 +1,25 @@
+{
+  "name": "dsh-token-billing",
+  "version": "0.2.0",
+  "description": "Token billing badge plugin for DeepSeek Harness web UI",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": ["lib", "cordis.patch.yml"],
+  "dependencies": {
+    "zod": "^4.4.3"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*",
+    "@deepseek-ai/dsh-storage-domain": "*"
+  },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": { "platform": "web" }
+  }
+}

@@ -1,0 +1,4 @@
+# dsh-token-billing 组合包层：插入计费插件行。
+- insert:
+    - id: token-billing
+      name: dsh-token-billing
