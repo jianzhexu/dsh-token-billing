@@ -16,7 +16,7 @@ DeepSeek Harness 的 token 计费插件：按 DeepSeek 官方定价对每次模�
 要求使用 web 组合的 profile（如 `dsh --profile web`；插件依赖 `webServer`、`storageDomain` 服务与浏览器插件表，均由 `dsh-web-app` 组合包提供）：
 
 ```sh
-dsh plugin --profile <name> add github:<你的GitHub用户名>/dsh-token-billing
+dsh plugin --profile <name> add github:jianzhexu/dsh-token-billing
 ```
 
 安装即激活：插件行随包自带的组合层挂载，无需手动编辑配置。本插件为纯 JavaScript、无构建步骤，git 安装不需要 pnpm 构建授权（`allowBuilds`）。

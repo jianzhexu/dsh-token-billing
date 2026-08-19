@@ -16,7 +16,7 @@ A token billing plugin for DeepSeek Harness: records every model call at DeepSee
 Requires a profile composing the web app (e.g. `dsh --profile web`; the plugin injects the `webServer` and `storageDomain` services and registers in the browser plugin table, all provided by the `dsh-web-app` bundle):
 
 ```sh
-dsh plugin --profile <name> add github:<your-github-username>/dsh-token-billing
+dsh plugin --profile <name> add github:jianzhexu/dsh-token-billing
 ```
 
 Installing activates it: the plugin row mounts through the bundle's own patch layer — no manual config editing. The plugin is plain JavaScript with no build step, so git installs need no pnpm build authorization (`allowBuilds`).
