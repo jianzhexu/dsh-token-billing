@@ -6,7 +6,7 @@ A token billing plugin for DeepSeek Harness: records every model call at DeepSee
 
 ## Features
 
-- Three-level cost totals — current session / owning workspace / all sessions (call count, input/cache-hit/output tokens, cost)
+- Session and owning-workspace cost totals: the row names the workspace inline and follows workspace switches; hover adds the all-sessions global totals
 - Separate peak / off-peak pricing (Beijing time 9:00-12:00 and 14:00-18:00 are peak; off-peak is half the peak price)
 - The ledger persists in the `token_billing` storage-domain domain and survives restarts
 - Hover the readout row for the full breakdown: session and global cost, token usage, per-model stats, workspace list, price table
