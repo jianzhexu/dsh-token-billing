@@ -1,6 +1,6 @@
 {
   "name": "dsh-token-billing",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Token billing badge plugin for DeepSeek Harness web UI",
   "license": "MIT",
   "type": "module",
